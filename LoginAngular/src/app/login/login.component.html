@@ -1,0 +1,68 @@
+<!-- login.component.html -->
+<div class="container">
+    <h1>Login</h1>
+    
+    <div *ngIf="loginError" class="login-error">{{ loginError }}</div>
+    
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+      <!-- Email/Username field -->
+      <div class="form-group">
+        <label for="email">Email or Username</label>
+        <input 
+          type="text" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="loginData.email" 
+          #email="ngModel"
+          placeholder="Enter your email or username"
+          required>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+          <div *ngIf="email.errors?.['required']">Email or username is required</div>
+        </div>
+      </div>
+      
+      <!-- Password field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="loginData.password" 
+          #password="ngModel"
+          placeholder="Enter your password"
+          required>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+          <div *ngIf="password.errors?.['required']">Password is required</div>
+        </div>
+      </div>
+      
+      <!-- Remember me checkbox -->
+      <div class="remember-me">
+        <input 
+          type="checkbox" 
+          id="rememberMe" 
+          name="rememberMe"
+          [(ngModel)]="loginData.rememberMe">
+        <label for="rememberMe">Remember me</label>
+      </div>
+      
+      <!-- Submit button -->
+      <button 
+        type="submit" 
+        [disabled]="loginForm.invalid">
+        Login
+      </button>
+      
+      <!-- Success message -->
+      <div *ngIf="loginSuccess" class="success-message">
+        Login successful! Redirecting...
+      </div>
+      
+      <!-- Footer links -->
+      <div class="footer">
+        <p>Don't have an account? <a (click)="goToRegister()" href="javascript:void(0)">Register</a></p>
+        <p><a (click)="forgotPassword()" href="javascript:void(0)">Forgot password?</a></p>
+      </div>
+    </form>
+  </div>
