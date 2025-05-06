@@ -1,0 +1,40 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light sky blue */
+    color: #333; /* Dark text color */
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Heading Style */
+  h1 {
+    font-size: 3em;
+    color: #ff6347; /* Tomato color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Paragraph Style */
+  p {
+    font-size: 1.2em;
+    color: #4682b4; /* Steel blue */
+    line-height: 1.6;
+  }
+  
+  /* Button Style */
+  button {
+    padding: 10px 20px;
+    background-color: #32cd32; /* Lime green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover effect on the button */
+  button:hover {
+    background-color: #228b22; /* Forest green */
+  }
+  
